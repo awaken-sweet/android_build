@@ -587,16 +587,16 @@ function lunch()
 
     if ! check_product $product $release
     then
-        # if we can't find a product, try to grab it off the LineageOS GitHub
+        # if we can't find a product, try to grab it off the PixelOS GitHub
         T=$(gettop)
         cd $T > /dev/null
-        vendor/lineage/build/tools/roomservice.py $product
+        vendor/custom/build/tools/roomservice.py $product
         cd - > /dev/null
         check_product $product $release
     else
         T=$(gettop)
         cd $T > /dev/null
-        vendor/lineage/build/tools/roomservice.py $product true
+        vendor/custom/build/tools/roomservice.py $product true
         cd - > /dev/null
     fi
 
